@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Bank.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\LivesUI.cs" />
     <Compile Include="Assets\MoneyUI.cs" />
     <Compile Include="Assets\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\BuildManager.cs" />

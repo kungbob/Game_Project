@@ -9,9 +9,13 @@ public class PlayerStats : MonoBehaviour {
     public static float IncreaseRate = 1f;
     private float Countdown = 0f;
 
+    public static int Lives;
+    public int startLives = 20;
+
     // Use this for initialization
     void Start () {
         Money = startMoney;
+        Lives = startLives;
 	}
 	
 	// Update is called once per frame
