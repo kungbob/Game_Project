@@ -1,6 +1,6 @@
 The Game is still in demo stage.
 It is working in progress.
 
-*** If you see this line, you are in developing branch.
+*** This is a branch for kungbob only.
 
-Please Pull request to this branch.
+Do not pull request to this branch.
