@@ -5,7 +5,8 @@ using UnityEngine;
 public class Shop : MonoBehaviour {
 
     public TurretBlueprint standardTurret;
-    public TurretBlueprint missileLauncherPrefab;
+    public TurretBlueprint missileLauncher;
+    public TurretBlueprint laserBeamer;
     public TurretBlueprint bank;
 
     BuildManager buildManager;
@@ -24,7 +25,13 @@ public class Shop : MonoBehaviour {
     public void SelectMissileLauncher()
     {
         Debug.Log("Missile Launcher Purchased");
-        buildManager.SetTurretToBuild(missileLauncherPrefab);
+        buildManager.SetTurretToBuild(missileLauncher);
+    }
+
+    public void SelectLaserBeamer()
+    {
+        Debug.Log("Laser Beamer Purchased");
+        buildManager.SetTurretToBuild(laserBeamer);
     }
 
     public void BuildBank()
