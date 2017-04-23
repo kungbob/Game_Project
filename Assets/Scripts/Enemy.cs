@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour {
 
-    public float speed = 10f;
+    public float startSpeed = 10f;
 
-    public int health = 100;
+    [HideInInspector]
+    public float speed;
 
-    public int value = 50;
+    public float health = 100;
+
+    public int worth = 50;
 
     public GameObject deathEffect;
 
-    private Transform target;
     private Transform aim;
-    private int wavepointIndex = 0;
 
     [Header("Attributes")]
 
@@ -32,11 +34,10 @@ public class Enemy : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    // Use this for initialization
-    void Start () {
-        target = Waypoints.points[0];
-        InvokeRepeating("UpdateTarget", 0f, 0.05f);
-    }
+    void Start()
+    {
+        speed = startSpeed;
+    } 
 
     void UpdateTarget()
     {
@@ -64,7 +65,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void TakeDamage (int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
 
@@ -74,9 +75,14 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void Slow (float pct)
+    {
+        speed = startSpeed * (1f - pct);
+    }
+
     void Die()
     {
-        PlayerStats.Money += value;
+        PlayerStats.Money += worth;
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
         Destroy(gameObject);
@@ -87,13 +93,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
         if (aim == null)
         {
-            Vector3 dir = target.position - transform.position;
-            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-            if (Vector3.Distance(transform.position, target.position) <= 0.4f)
-            {
-                GetNextWaypoint();
-            }
+            return;
         }
         else
         {
@@ -121,20 +121,5 @@ public class Enemy : MonoBehaviour {
             bullet.Seek(aim);
     }
 
-    void GetNextWaypoint()
-    {
-        if (wavepointIndex >= Waypoints.points.Length - 1)
-        {
-            EndPath();
-            return;
-        }
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
-    }
-
-    void EndPath ()
-    {
-        PlayerStats.Lives--;
-        Destroy(gameObject);
-    }
+   
 }

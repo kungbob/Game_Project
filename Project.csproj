@@ -77,11 +77,14 @@
   <ItemGroup>
     <Compile Include="Assets\Bank.cs" />
     <Compile Include="Assets\DayNightController.cs" />
+    <Compile Include="Assets\EnemyMovement.cs" />
     <Compile Include="Assets\FXAA\Scripts\FXAA.cs" />
     <Compile Include="Assets\FXAA\Scripts\FXAAPostEffectsBase.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\GameOver.cs" />
     <Compile Include="Assets\LivesUI.cs" />
     <Compile Include="Assets\MoneyUI.cs" />
+    <Compile Include="Assets\NodeUI.cs" />
     <Compile Include="Assets\PlayerStats.cs" />
     <Compile Include="Assets\Realistic Terrain Collection\Other\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Realistic Terrain Collection\Other\Effects\ImageEffects\Scripts\Bloom.cs" />
