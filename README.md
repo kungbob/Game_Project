@@ -20,7 +20,7 @@ Upgrade as soon as possible.
 Remember to build tower.
 Build your army to attack.
 
-TODOLIST
+Todolist
 --------
 9 towers -- 7 completed
 9 units -- 3 completed
