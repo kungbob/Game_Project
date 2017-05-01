@@ -37,3 +37,7 @@ balancing  -- completed
 Music -- BGM added
 
 Logic of scene change -- completed
+
+Special
+-------
+All icon image used are downloaded from https://icons8.com/ & https://www.youtube.com/user/Brackeys
