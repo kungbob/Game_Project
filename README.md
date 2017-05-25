@@ -6,6 +6,8 @@ Due to the github file size, the exe is divided into two rar file.
 Please download two files together to unzip. The build_2 data and build_2.exe
 is extracted.
 
+The trailer is added for demonstration purpose.
+
 Control
 -------
 w,s,a,d - control the person/king/traveler
